@@ -683,6 +683,13 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
+        helm_ls = {
+          settings = {
+            yamlls = {
+              path = 'yaml-language-server',
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = { ... },
@@ -735,6 +742,8 @@ require('lazy').setup({
       }
     end,
   },
+
+  { 'qvalentin/helm-ls.nvim', ft = 'helm' },
 
   { -- Autoformat
     'stevearc/conform.nvim',
@@ -941,7 +950,7 @@ require('lazy').setup({
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    main = 'nvim-treesitter.configs', -- Sets main module to use for opts
+    main = 'nvim-treesitter.config', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
       ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
